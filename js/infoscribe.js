@@ -1,6 +1,6 @@
 (function(){
 
-var app = angular.module('infoscribe', ['infoscribe-transcriptions']);
+var app = angular.module('infoscribe', []);
 
 
 app.directive('collectionsHighlight', function(){
