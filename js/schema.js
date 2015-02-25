@@ -1,6 +1,6 @@
 (function(){
 
-var app = angular.module('infoscribe-transcriptions', []);
+var app = angular.module('infoscribe-schema', []);
 
 
 
@@ -17,28 +17,28 @@ app.controller('TranscriptionController', ['$http', '$scope', '$compile', functi
 	
 	this.currentTranscription = {};
 	this.docModel = [];
+	//$scope.docModel = this.docModel;
+
+	$scope.$watch('docModel', function() {
+    	console.log("guess you just added something!");
+ 	 }, true);
+	this.fieldOptions = [
+			    { label: 'text', value: "text" },
+			    { label: 'number', value: "number" },
+			    { label: 'date', value: "date"}
+			  	];
 
 	this.currentData = {};
 
 
-	//load the document model
 
-	$http.get('data/docModel.json').success(function(data){
-
-		this.docModel = data.docModel;
-		//console.log(data.docModel);
-
-	});
-
-	//load the document
-/*
 	$http.get('data/sample_docs_list.json').success(function(data){
 
 		transcription_session.documents = data;
 		transcription_session.currentDoc = data[0];
 
 	});
-*/
+
 
 	this.docScale = 1;
 	this.currentHighlight = null;

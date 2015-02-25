@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" ng-app="infoscribe-transcriptions">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="infoscribe-schema">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>InfoScribe</title>
@@ -22,7 +22,7 @@
     	<script type="text/javascript" src="js/lib/moment.js"></script>
 		<script type="text/javascript" src="js/lib/angular.min.js"></script>
 		<script type="text/javascript" src="js/infoscribe.js"></script>
-		<script type="text/javascript" src="js/transcriptions.js"></script>
+		<script type="text/javascript" src="js/schema.js"></script>
 
 	</head>
 	<body>
@@ -41,8 +41,21 @@
 	        
 	        <div class="row">
 	        	<div class="col-md-12"><h3 class="info-red">Sample Project</h3>
-	        		Transcribe the following document:<br/>
+	        		Create a new transcription field by holding down the <span class="info-red">SHIFT</span> key and dragging your mouse to create a rectangle around the part of the document where the information will typically appear.<br/>
 					<hr/>	        		
+	        	</div>
+	        </div>
+	        <div class="row">
+	        	<div class="col-md-7" style="padding-right:0px;">
+	        			<div class="col-md-9" style="padding-left:0px;"><span class="info-red">Double-click to zoom, and drag to pan the image.</span> To reset the zoom level, click the "Reset zoom."</div>
+	        			<div class="col-md-2" style="padding-left:0px;">
+	        			<div class="btn btn-sm btn-success" ng-click="transcriptionCtrl.resetZoom($event)">Reset zoom</div>
+	        			</div>
+	        			<div class="col-md-1"></div>
+	        	</div>
+	        	<div class="col-md-5" style="padding-left:0px">
+
+	        		<div class="info-red"><b>Current schema:</b></div>
 	        	</div>
 	        </div>
 	        <div class="row">
